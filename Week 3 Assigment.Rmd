@@ -1,0 +1,31 @@
+---
+title: "Week3 Assigment"
+author: "Khalid Saeed"
+date: "8/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## This is a study of Top 10 Rateing Books..
+
+- Showing the Top Rating Books based on GoodReads website.
+- Showing this stats by using plotly package.
+- This Assigment is part of Courseras' Course Tasks.
+
+```{r cars}
+#load plotly package
+library(plotly)
+```
+
+## Chart below shows the average of top 10.
+
+Studay is removing the lowest count rating books.
+
+```{r pressure, echo=FALSE}
+Books <- read.csv("Books.csv")
+TopTen <- plot_ly(data= Books, x = ~title, y = ~average_rating, type="bar") %>% layout(title="Top 10 Rating Books", xaxis=list(title="Name of Book"), yaxis=list(title="Average Rating"))
+TopTen
+```
